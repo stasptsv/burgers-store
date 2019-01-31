@@ -1,0 +1,15 @@
+@import '../_bloks/player.scss';
+
+.section-video {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url('../../image/background/video-bg.jpg') center center no-repeat;
+  background-size: cover;
+	position: relative;
+
+	.section-title {
+		margin-bottom: rem(30px);
+	}
+}
+

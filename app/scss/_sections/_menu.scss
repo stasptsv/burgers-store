@@ -1,0 +1,70 @@
+.section-menu {
+	background: url('../../image/menu/menu-bg.jpg') center center no-repeat;
+  background-size: cover;
+	position: relative;
+}
+
+.menu-title {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+}
+
+.menu-list {
+	display: flex;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	
+}
+
+.menu-item {
+	height: 100%;
+	display: flex;
+}
+
+.menu-trigger {
+	position: relative;
+	display: block;	
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: rem(80px);
+	height: 100%;
+	text-decoration: none;
+}
+
+.menu-trigger__title {
+	position: absolute;
+	font-family: 'Gagalin Regular', Helvetica, sans-serif;
+	font-size: rem(40px);
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+  left: 50%;
+	top: 100%;
+	margin-top: rem(-20px);
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: 0 0;
+}
+
+.menu-item__content {
+	height: 100%;
+	width: 0;
+	flex: 1;
+	background: rgba(#2f3234, .93);
+	overflow: hidden;
+	transition: width .6s;
+	transition-delay: .4s;
+}
+
+.menu-item__descr {
+	display: none;
+	font-family: 'Ubuntu Light', Arial, sans-serif;
+	font-size: rem(14px);
+	line-height: 1.8;
+	color: #ffffff;
+	padding: rem(60px) rem(30px);
+	width: 100%;  
+}

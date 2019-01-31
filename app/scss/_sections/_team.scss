@@ -1,0 +1,167 @@
+.section-team {
+	background: url('../../image/team/team-bg.jpg') center center no-repeat;
+  background-size: cover;
+	position: relative;
+
+	@include tablets {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(#2f3234, .93);
+		}
+	}
+}
+
+.section-title__team {
+	margin-bottom: rem(30px);
+}
+
+.team-overlay {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	background: rgba(#2f3234, .93);
+	padding: 7% 3% 0 8%;
+
+	@include tablets {
+		position: relative;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		text-align: center;
+		background: transparent;
+		padding: 0;
+	}
+}
+
+.team-trigger {
+	position: relative;
+	display: block;
+	font-family: 'Gagalin Regular', Helvetica, sans-serif;
+	font-size: rem(14px);
+	color: #fff;
+	margin-bottom: rem(20px);
+	text-decoration: none;
+
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: rem(-18px);
+		top: rem(8px);
+		width: 0;
+    height: 0;
+	}
+
+	&:before {
+		border-top: rem(7px) solid #f9b43b;
+		border-left: rem(5px) solid transparent;
+		border-right: rem(5px) solid transparent;
+		border-bottom: rem(0px) solid transparent;
+		transform: rotate(0deg);
+		transition: .3s;
+	}
+
+	&:after {
+		display: none;
+		border-bottom: rem(7px) solid #f9b43b;
+		border-left: rem(5px) solid transparent;
+		border-right: rem(5px) solid transparent;
+		border-top: rem(0px) solid transparent;
+	}
+
+	@include tablets {
+		display: inline-block;
+		font-size: rem(25px);
+
+		&:before {
+			margin-top: rem(10px);
+		}
+	}
+}
+
+.team-list {
+	margin-left: rem(18px);
+	@include tablets {
+		margin-left: 0;
+	}
+}
+
+.team-list__item {
+	margin-bottom: rem(40px);
+	
+	@include tablets {
+    margin-bottom: rem(30px);
+  }
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
+	&.active {
+		.team-acco__trigger {
+			color: #f9b43b;
+
+			&:before {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+}
+
+.team-list__item-content {
+	display: none;
+	justify-content: flex-start;
+	align-items: center;
+
+	@include tablets {
+		flex-direction: column;
+		padding: 0 25%;
+	}
+}
+
+.team-list__item-pic {
+	margin-right: rem(30px);
+	text-align: center;
+
+	@include tablets {
+		margin-right: 0;
+		margin-bottom: rem(15px);
+	}
+}
+
+.team-list__item-image {
+	width: rem(100px);
+	height: rem(100px);
+	border-radius: 50%;
+}
+
+.team-list__item-title {
+	font-family: 'Ubuntu Bold', Arial, sans-serif;
+	font-size: rem(14px);
+	color: #ffffff;
+	margin-bottom: rem(10px);
+}
+
+.team-list__item-text {
+	font-family: 'Ubuntu Light', Arial, sans-serif;
+	font-size: rem(14px);
+	color: #e3e4e4;
+	width: rem(220px);
+
+	@include laptop {
+		width: 100%;
+	}
+}

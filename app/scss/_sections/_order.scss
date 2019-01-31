@@ -1,0 +1,141 @@
+.section-order {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url('../../image/order-form/order-bg.jpg') center center no-repeat;
+  background-size: cover;
+	position: relative;
+	
+	.section-title {
+		text-align: center;
+		margin-bottom: rem(40px);
+	}
+}
+
+.order-form {
+	display: flex;
+}
+
+.form-part__left {
+	flex: 1;
+	margin-right: rem(20px);
+}
+
+.form-part__right {
+	flex: 1;
+}
+
+.order-form__row {
+	display: flex;
+
+	&-mb {
+		margin-bottom: rem(23px);
+	}
+}
+
+.order-form__label {
+	display: block;
+	width: 100%;
+	margin-right: rem(20px);
+	margin-bottom: rem(20px);
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.order-form__title {
+	font-family: 'Ubuntu Light', Arial, sans-serif;
+	font-size: rem(14px);
+	color: #ffffff;
+}
+
+.order-form__input {
+	font-size: rem(14px);
+	width: 100%;
+	margin-top: rem(5px);
+  padding: rem(10px) rem(20px);
+  border: rem(1px) solid #d1cfcb;
+	border-radius: rem(5px);
+}
+
+.order-form__textarea {
+	min-height: rem(123px);
+	resize: none;
+}
+
+.order-form__actives{
+	display: flex;
+	flex-direction: column;
+}
+
+.label-radio {
+	display: flex;
+	align-items: center;
+	margin-right: rem(20px);
+}
+
+.radio-title {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: rem(10px);
+}
+
+.order-form__button {
+	font-family: 'Ubuntu Medium', Arial, sans-serif;
+	font-size: rem(13px);
+	color: #ffffff;
+	text-transform: uppercase;
+	margin-right: rem(20px);
+	padding: rem(10px) rem(15px);
+  background: #e35028;
+  border: 0;
+  border-radius: rem(5px);
+  cursor: pointer;
+}
+
+.button-reset {
+	padding-left: 0;
+  padding-right: 0;
+  text-transform: none;
+  background: transparent;
+}
+
+.radio-elem {
+  position: absolute;
+  top: 0;
+  left: rem(-9999px);
+}
+
+.radio__fake {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+  width: rem(16px);
+  height: rem(16px);
+  border-radius: 50%;
+  background: #ffffff;
+  
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: rem(0px);
+    height: rem(0px);
+    border-radius: 50%;
+    background: #e35028;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width .3s, height .3s;
+  }
+}
+
+.radio-elem:checked {
+  &+.radio__fake {
+    &:after {
+      width: rem(8px);
+      height: rem(8px);
+    }
+  }
+}

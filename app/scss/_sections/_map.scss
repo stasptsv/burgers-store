@@ -1,0 +1,19 @@
+@import '../_bloks/footer.scss';
+.map {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	&-balloon {
+		font-family: 'Ubuntu Light', Arial, sans-serif;
+		font-size: rem(14px);
+		color: #222222;
+	}
+
+	&-balloon__img {
+		margin-right: 15px;
+		width: 61px;
+		height: 46px;
+		vertical-align: middle;
+	}
+}

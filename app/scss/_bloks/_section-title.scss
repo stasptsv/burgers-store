@@ -1,0 +1,31 @@
+.section-title {
+	font-family: 'Gagalin Regular', Helvetica, sans-serif;
+	font-size: rem(72px);
+	color: #f9b43b;
+
+	&__black {
+		color: #2f3234;
+		text-align: center;
+	}
+
+	&__white {
+		color: #ffffff;
+	}
+	
+	span {
+		display: block;
+		font-family: 'Lifehack Medium', 'Arial Narrow', sans-serif;
+		text-transform: lowercase;
+		line-height: 1em;
+		color: #ffffff;
+
+		@include tablets {
+			text-align: center;
+		}
+	}
+
+	@include tablets {
+		text-align: center;
+	}
+
+}

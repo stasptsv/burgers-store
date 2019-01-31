@@ -1,10 +1,24 @@
 @import "vars";
 @import "fonts";
 @import "libs";
-@import "./_sections/main";
 
 //normalize
 @import "../libs/normalize.scss";
+
+// Media
+@import "./_mixins/media";
+
+@import "_layout.scss";
+
+// Sections
+@import "./_sections/main";
+@import "./_sections/best";
+@import "./_sections/team";
+@import "./_sections/menu";
+@import "./_sections/feedback";
+@import "./_sections/video";
+@import "./_sections/order";
+@import "./_sections/map";
 
 
 @import "media"; // Always at the end
