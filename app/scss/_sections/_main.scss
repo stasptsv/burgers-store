@@ -6,7 +6,7 @@
 .section-main {
 	background: url('../../image/main/main-bg.jpg') center center no-repeat;
   background-size: cover;
-  position: relative;
+	position: relative;
 }
 
 .main-container {
@@ -55,9 +55,12 @@
 	max-width: 100%;
 	max-height: 100%;
 	
-
 	@include tablets {
 		max-width: 80%;
+	}
+
+	@include phones {
+		margin-bottom: rem(20px);
 	}
 }
 

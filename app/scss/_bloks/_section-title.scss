@@ -22,10 +22,18 @@
 		@include tablets {
 			text-align: center;
 		}
+
+		@include phones {
+			font-size: rem(45px);
+		}
 	}
 
 	@include tablets {
 		text-align: center;
+	}
+
+	@include phones {
+		font-size: rem(55px);
 	}
 
 }

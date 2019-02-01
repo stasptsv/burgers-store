@@ -14,11 +14,24 @@
 
 .order-form {
 	display: flex;
+
+	@include tablets {
+		flex-direction: column;
+		padding: 0 15%;
+	}
+
+	@include phones {
+		padding: 0;
+	}
 }
 
 .form-part__left {
 	flex: 1;
 	margin-right: rem(20px);
+
+	@include tablets {
+		margin-right: 0;
+	}
 }
 
 .form-part__right {
@@ -67,12 +80,20 @@
 .order-form__actives{
 	display: flex;
 	flex-direction: column;
+
+	@include phones {
+		align-items: center;
+	}
 }
 
 .label-radio {
 	display: flex;
 	align-items: center;
 	margin-right: rem(20px);
+
+	@include phones {
+		margin-right: 10px;
+	}
 }
 
 .radio-title {

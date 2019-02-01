@@ -1,0 +1,62 @@
+.feedback-popup {
+	position: absolute;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(47,50,52,.92);
+	padding: rem(25px) rem(20px);
+}
+
+.feedback-full__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: rem(20px);
+}
+
+.feedback-full__close {
+	margin-top: rem(-5px);
+	cursor: pointer;
+}
+
+.feedback-full__title {
+	font-family: 'Gagalin Regular', Helvetica, sans-serif;
+	font-size: rem(14px);
+	text-transform: uppercase;
+}
+
+.feedback-full__content {
+	font-family: 'Ubuntu Medium', Arial, sans-serif;
+	font-size: rem(14px);
+	line-height: 1.5;
+	color: #4b4d4f;
+	transition: 0.7s ease;
+}
+
+.feedback-full {
+	position: relative;
+	width: 460px;
+	padding: rem(25px) rem(20px);
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
+.popup-show {
+	display: flex;
+	animation: fadeIn 0.7s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
