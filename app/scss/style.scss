@@ -13,12 +13,15 @@
 // Sections
 @import "./_sections/main";
 @import "./_sections/best";
+@import "./_sections/burgers";
 @import "./_sections/team";
 @import "./_sections/menu";
 @import "./_sections/feedback";
 @import "./_sections/video";
 @import "./_sections/order";
 @import "./_sections/map";
+@import "./_bloks/fixed-menu";
+@import "./_bloks/mobile-menu";
 
 
 @import "media"; // Always at the end

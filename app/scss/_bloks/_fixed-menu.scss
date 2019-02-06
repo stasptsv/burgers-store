@@ -1,0 +1,106 @@
+body, html {
+  overflow: hidden;
+	transition: opacity 400ms;
+	
+	@include tablets {
+		overflow: scroll;
+	}
+}
+
+.onepage-wrapper {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+}
+
+.onepage-pagination {
+  position: fixed;
+  top: 14%;
+  right: 26px;
+  z-index: 5;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.onepage-pagination li {
+  height: 21px;
+}
+
+.onepage-pagination li a{
+  position: relative;
+  display: inline-block;
+  width: 3px * 2;
+	height: 3px * 2;
+	border-radius: 50%;
+	background-color: #ffffff;
+  vertical-align: middle; 
+}
+
+.onepage-pagination li a:before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 2px * 2;
+	height: 2px * 2;
+	border-radius: 50%;
+	background-color: transparent;
+  border: 1px solid #fff;
+  transform: translate(-50%, -50%);
+  transition: width, height, 0.4s;
+}
+
+.onepage-pagination li a.active:before,
+.onepage-pagination li a:hover::before {
+  width: 14px;
+  height: 14px;
+}
+
+.disabled-onepage-scroll .onepage-pagination {
+  display: none;
+}
+
+.scroll-paginator {
+	position: fixed;
+	top: 14%;
+	right: 26px;
+
+	&__item {
+		height: 21px;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		width: 3px * 2;
+		height: 3px * 2;
+		border-radius: 50%;
+		background-color: #ffffff;
+		vertical-align: middle;
+
+		&::before {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 50%;
+			width: 2px * 2;
+			height:23px * 2;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 1px solid #fff;
+			transform: translate(-50%, -50%);
+			transition: width, height, 0.4s;
+		}
+
+		&.active::before,
+		&:hover::before {
+			width: 14px;
+			height: 14px;
+		}
+	}
+
+	@include tablets {
+		display: none;
+	}
+}

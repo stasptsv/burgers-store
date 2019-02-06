@@ -1,12 +1,12 @@
 {
-  "name": "optimizedhtml",
+  "name": "Stanislav Patlasov",
   "version": "4.0.0",
-  "description": "OptimizedHTML 4 - Start HTML Template",
+  "description": "Traning project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "Stanislav Patlasov",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
@@ -20,5 +20,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8"
-  }
+  },
+  "dependencies": {}
 }

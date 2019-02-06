@@ -1,0 +1,36 @@
+.modal {
+	position: absolute;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(47,50,52,.92);
+	padding: rem(25px) rem(20px);
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #ffffff;
+	padding: rem(20px);
+	border-radius: 4px;
+}
+
+.modal-title {
+	font-family: 'Ubunty Medium', Arial, sans-serif;
+	font-size: rem(16px);
+	margin-bottom: rem(15px);
+}
+
+.button-modal {
+	border: none;
+}
+
+.modal-show {
+	display: flex;
+	animation: fadeIn 0.7s;
+}

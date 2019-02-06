@@ -8,6 +8,10 @@
   background-size: cover;
 	position: relative;
 
+	@include tablets {
+		display: none;
+	}
+
 	.section-title {
 		margin-bottom: rem(30px);
 	}

@@ -31,8 +31,8 @@
 <body>
 
 	<div class="wrapper">
-		<section class="section-main section">
-			<header class="header">
+		<section id="page1" class="section-main section">
+			<header class="header header-overlay">
 				<div class="container header-container">
 					<div class="header-logo">
 						<a href="#" class="logo">
@@ -41,40 +41,39 @@
 					</div>
 					<div class="header-menu">
 						<nav class="navigation">
-							<ul class="navigation-list">
+							<ul class="navigation-list mobile-list">
 								<li class="navigation-item">
-									<a href="#" class="navigation-link">О нас</a>
+									<a href="#page2" class="navigation-link" data-index="2">О нас</a>
 								</li>
 								<li class="navigation-item">
-									<a href="#" class="navigation-link">Бургеры</a>
+									<a href="#burgers" class="navigation-link" data-index="3">Бургеры</a>
 								</li>
 								<li class="navigation-item">
-									<a href="#" class="navigation-link">Команда</a>
+									<a href="#team" class="navigation-link" data-index="4">Команда</a>
 								</li>
 								<li class="navigation-item">
-									<a href="#" class="navigation-link">Меню</a>
+									<a href="#menu" class="navigation-link" data-index="5">Меню</a>
 								</li>
 								<li class="navigation-item">
-									<a href="#" class="navigation-link">Отзывы</a>
+									<a href="#feedback" class="navigation-link" data-index="6">Отзывы</a>
 								</li>
 								<li class="navigation-item">
-									<a href="#" class="navigation-link">Контакты</a>
+									<a href="#contacts" class="navigation-link" data-index="8">Контакты</a>
 								</li>
 								<li class="navigation-item">
-									<a href="#" class="navigation-link">Как мы работаем</a>
+									<a href="#video" class="navigation-link" data-index="7">Как мы работаем</a>
 								</li>
 							</ul>
 						</nav>
 					</div>
 					<div class="header-links">
-						<a href="#" class="button order-link">Заказать</a>
+						<a href="#order" class="button order-link" data-index="8">Заказать</a>
 						<a href="#" class="hamburger">
 							<div class="hamburger-bars"></div>
 						</a>
 					</div>
 				</div>
 			</header>
-			<!-- <div class="main-container"> -->
 				<div class="container main-container">
 					<div class="main-content">
 						<div class="main-content__left">
@@ -88,16 +87,15 @@
 						</div>
 					</div>
 				</div>
-			<!-- </div> -->
-			<a class="down-arrow" href="#" data-scroll-to="1">
-				<svg class="down-arrow__icon">
-					<use xlink:href="./image/svg/sprite.svg#arrow-scroll"></use>
+			<a class="down-arrow" href="#page2" data-index="2">
+				<svg class="down-arrow__icon" data-index="2">
+					<use xlink:href="image/svg/sprite.svg#arrow-scroll"></use>
 				</svg>
 			</a>
 		</section>
 
-		<!-- Section Abuout -->
-		<section class="section-best section">
+		<!-- Section Abuout-Us -->
+		<section id="page2" class="section-best section">
 			<div class="container">
 				<h2 class="section-title section-title__black">Мы лучшие</h2>
 				<ul class="best-list">
@@ -145,9 +143,144 @@
 		</section>
 
 		<!-- Section Burgers -->
+		<section id="page3" class="section-burgers section">
+			<div class="container">
+				<div class="burgers-slider">
+					<div class="burgers-slider__left">
+						<div class="burgers-img">
+							<img class="slider-item fade" src="image/slider/burger-1.png" alt="Бургер">
+							<img class="slider-item fade" src="image/slider/burger-2.png" alt="Бургер">
+							<img class="slider-item fade" src="image/slider/burger-3.png" alt="Бургер">
+							<img class="slider-item fade" src="image/slider/burger-4.png" alt="Бургер">
+							<img class="slider-item fade" src="image/slider/burger-5.png" alt="Бургер">
+						</div>
+						<div class="composition">
+							<div class="composition-img">
+								<svg fill="#ffffff">  
+									<use xlink:href="image/svg/sprite.svg#burger"></use>
+								</svg>
+							</div>
+							<div class="composition-label">Состав</div>
+							<ul class="composition-list">
+								<li class="composition-item">
+									<div class="composition-icon">
+										<svg width="44" height="39" fill="#e25028">
+											<use xlink:href="image/svg/sprite.svg#beef"></use>	
+										</svg>
+									</div>
+									<div class="composition-ingrid">Говядина</div>
+									<div class="composition-weight">300 г.</div>
+								</li>
+								<li class="composition-item">
+									<div class="composition-icon">
+										<svg width="44" height="39" fill="#f8b43a">
+											<use xlink:href="image/svg/sprite.svg#buns"></use>	
+										</svg>
+									</div>
+									<div class="composition-ingrid">Булочки</div>
+									<div class="composition-weight">100 г.</div>
+								</li>
+								<li class="composition-item">
+									<div class="composition-icon">
+										<svg width="44" height="39" fill="#8bc03f">
+											<use xlink:href="image/svg/sprite.svg#salad"></use>	
+										</svg>
+									</div>
+									<div class="composition-ingrid">Зелень</div>
+									<div class="composition-weight">30 г.</div>
+								</li>
+								<li class="composition-item">
+									<div class="composition-icon">
+										<svg width="44" height="39" fill="#e25028">
+											<use xlink:href="image/svg/sprite.svg#sauce"></use>	
+										</svg>
+									</div>
+									<div class="composition-ingrid">Соус</div>
+									<div class="composition-weight">150 г.</div>
+								</li>
+								<li class="composition-item">
+									<div class="composition-icon">
+										<svg width="44" height="39" fill="#8ac03e">
+											<use xlink:href="image/svg/sprite.svg#cucumber"></use>	
+										</svg>
+									</div>
+									<div class="composition-ingrid">Овощи</div>
+									<div class="composition-weight">200 г.</div>
+								</li>
+								<li class="composition-item">
+									<div class="composition-icon">
+										<svg width="44" height="39" fill="#f8b43a">
+											<use xlink:href="image/svg/sprite.svg#cheese"></use>	
+										</svg>
+									</div>
+									<div class="composition-ingrid">Сыр</div>
+									<div class="composition-weight">80 г.</div>
+								</li>
+							</ul>
+						</div>
+						<div class="kkal">
+							<svg width="60" height="60" fill="#ffffff">
+								<use xlink:href="image/svg/sprite.svg#kkal"></use>	
+							</svg>
+							<span class="kkal-quantity">1200</span>
+							<span class="kkal-unit">ккал</span>
+						</div>
+					</div>
+					<div class="burgers-slider__right">
+						<div class="slider-title">
+							<h2 class="section-title section-title__burgers fade">Chiken burger</h2>
+							<h2 class="section-title section-title__burgers fade">Spicy Shrimp Burger</h2>
+							<h2 class="section-title section-title__burgers fade">NYC Diner Bacon Cheeseburger</h2>
+							<h2 class="section-title section-title__burgers fade">Dark BEEF Burger</h2>
+							<h2 class="section-title section-title__burgers fade">Burger sandwich</h2>
+						</div>
+						<div class="slider-descr">
+							<p class="burger-descr fade">
+								Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+							</p>
+							<p class="burger-descr fade">
+								Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+							</p>
+							<p class="burger-descr fade">
+								Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+							</p>
+							<p class="burger-descr fade">
+								Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+							</p>
+							<p class="burger-descr fade">
+								Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+							</p>
+						</div>
+						<div class="burgers-actions">
+							<span class="burger-price">500</span>
+							<span class="burger-price">600</span>
+							<span class="burger-price">700</span>
+							<span class="burger-price">800</span>
+							<span class="burger-price">900</span>
+							<span class="burger-price__text">рублей</span>
+							<button class="button burgers-button__order">Заказать</button>
+						</div>
+					</div>
+				</div>
+				<div class="arrow-prev">
+					<a class="arrow-prev__icon">
+						<svg class="arrow-prev__icon">
+							<use xlink:href="image/svg/sprite.svg#arrow-scroll"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="arrow-next">
+					<a class="arrow-next__icon">
+						<svg class="arrow-next__icon">
+							<use xlink:href="image/svg/sprite.svg#arrow-scroll"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</section>
 
 		<!-- Section Team -->
-		<section class="section-team section">
+		<section id="team" class="section-team section">
 			<div class="team-overlay">
 				<h2 class="section-title section-title__team">Команда</h2>
 				<ul class="team-list">
@@ -204,7 +337,7 @@
 		</section>
 
 		<!-- Section Menu -->
-		<section class="section-menu section">
+		<section id="menu" class="section-menu section">
 			<h2 class="section-title section-title__white menu-title">Меню</h2>
 			<ul class="menu-list">
 				<li class="menu-item">
@@ -265,7 +398,7 @@
 		</section>
 
 		<!-- Section Feedback -->
-		<section class="section-feedback section">
+		<section id="feedback" class="section-feedback section">
 			<ul class="feedback-list">
 				<li class="feedback-item">
 					<div class="feedback-overlay">
@@ -408,7 +541,7 @@
 		</section>
 
 		<!-- Section Video -->
-		<section class="section-video section">
+		<section id="video" class="section-video section">
 			<div class="container">
 				<h2 class="section-title section-title__black">Как мы работаем</h2>
 				<div class="player hidden">
@@ -431,7 +564,7 @@
 		</section>
 
 		<!-- Section Order -->
-		<section class="section-order section">
+		<section id="order" class="section-order section">
 			<div class="container">
 				<h2 class="section-title">Закажите доставку</h2>
 				<div class="order-content">
@@ -440,35 +573,35 @@
 							<div class="order-form__row">
 								<label class="order-form__label">
 									<span class="order-form__title">Имя</span>
-									<input class="order-form__input" name="name" type="text" placeholder="">
+									<input class="order-form__input" name="name" type="text" required>
 								</label>
 								<label class="order-form__label">
 									<span class="order-form__title">Телефон</span>
-									<input class="order-form__input" name="phone" type="text" placeholder="">
+									<input class="order-form__input" name="phone" type="tel" required>
 								</label>
 							</div>
 							<div class="order-form__row">
 								<label class="order-form__label">
 									<span class="order-form__title">Улица</span>
-									<input class="order-form__input" name="street" type="text" placeholder="">
+									<input class="order-form__input" name="street" type="text" required>
 								</label>
 							</div>
 							<div class="order-form__row">
 								<label class="order-form__label">
 									<span class="order-form__title">Дом</span>
-									<input class="order-form__input" name="home" type="text" placeholder="">
+									<input class="order-form__input" name="home" type="text" required>
 								</label>
 								<label class="order-form__label">
 									<span class="order-form__title">Корпус</span>
-									<input class="order-form__input" name="housing" type="text" placeholder="">
+									<input class="order-form__input" name="housing" type="text">
 								</label>
 								<label class="order-form__label">
 									<span class="order-form__title">Квартира</span>
-									<input class="order-form__input" name="apartment" type="text" placeholder="">
+									<input class="order-form__input" name="apartment" type="text" maxlength="3">
 								</label>
 								<label class="order-form__label">
 									<span class="order-form__title">Этаж</span>
-									<input class="order-form__input" name="floor" type="text" placeholder="">
+									<input class="order-form__input" name="floor" type="text" maxlength="3">
 								</label>
 							</div>
 						</div>
@@ -500,7 +633,7 @@
 									</label>
 								</div>
 								<div class="order-form__row">
-									<input class="button order-form__button " type="submit" value="Заказать">
+									<input class="button order-form__button" type="submit" value="Заказать">
 									<input class="order-form__button button-reset" type="reset" value="Очистить">
 								</div>
 							</div>
@@ -508,9 +641,15 @@
 					</form>
 				</div>
 			</div>
+			<div class="modal">
+				<div class="modal-content">
+					<div class="modal-title">Сообщение отправлено</div>
+					<button class="button button-modal">Закрыть</button>
+				</div>
+			</div>
 		</section>
 
-		<section class="section-contacts section">
+		<section id="contacts" class="section-contacts section">
 			<div class="yandex-map map" id="map"></div>
 			<footer class="footer">
 				<div class="container footer-container">
@@ -564,11 +703,45 @@
 		</section>
 	</div>
 
+	<div class="mobile-menu">
+		<nav class="navigation navigation-mobile">
+			<ul class="navigation-mobile__list">
+				<li class="navigation-mobile__item">
+					<a href="" class="navigation-mobile__link">о нас</a>
+				</li>
+				<li class="navigation-mobile__item">
+					<a href="" class="navigation-mobile__link">бургеры</a>
+				</li>
+				<li class="navigation-mobile__item">
+					<a href="" class="navigation-mobile__link">команда</a>
+				</li>
+				<li class="navigation-mobile__item">
+					<a href="" class="navigation-mobile__link">меню</a>
+				</li>
+				<li class="navigation-mobile__item">
+					<a href="" class="navigation-mobile__link">отзывы</a>
+				</li>
+				<li class="navigation-mobile__item">
+					<a href="" class="navigation-mobile__link">контакты</a>
+				</li>
+			</ul>
+		</nav>
+		<a class="navigation-mobile__close" href="#">
+			<img class="navigation-mobile__close-icon" src="image/svg/close.svg" alt="Закрыть">
+		</a>
+	</div>
+
+	<script src="libs/jquery-3.3.1.min.js"></script>
+	<script src="libs/jquery.onepage-scroll.min.js"></script>
+	<script>
+		if (document.body.clientWidth > 768) {
+			document.write('<script src="js/one-page-scroll.js">')
+		}
+	</script>	
 	<script src="https://www.youtube.com/iframe_api"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="js/player.js"></script>
 	<script src="js/map.js"></script>
 	<script src="js/main.min.js"></script>
-
 </body>
 </html>

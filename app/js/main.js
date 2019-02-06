@@ -8,10 +8,10 @@ window.addEventListener('DOMContentLoaded', function() {
 		item.addEventListener('click', () => {
 			accContent.forEach(function(item) {
 				item.classList.remove('show')
-				item.previousElementSibling.classList.remove('active')
+				item.previousElementSibling.classList.remove('active-item_team')
 			});
 			item.nextElementSibling.classList.toggle('show');
-			item.classList.toggle('active');
+			item.classList.toggle('active-item__team');
 		}); 
 	});
 
@@ -105,4 +105,119 @@ window.addEventListener('DOMContentLoaded', function() {
 	
 	accordeonHorizontal.init();
 	
+
+	// Form 
+	let message = {
+			loading: 'Загрузка...',
+			success: 'Спасибо! Скоро мы с вами свяжемся!',
+			failure: 'Что-то пошло не так...'
+	}
+
+	let form = document.querySelector('.order-form'),
+			input = document.querySelector('input'),
+			modal =	document.querySelector('.modal'),
+			statusMessage = modal.querySelector('.modal-title'),
+			modalBtnClose = modal.querySelector('.button-modal');
+
+	modalBtnClose.addEventListener('click', (event) => {
+		event.preventDefault();
+		modal.classList.remove('modal-show');
+	})
+
+	form.addEventListener('submit', function(event) {
+		event.preventDefault();
+
+		let request = new XMLHttpRequest();
+
+		request.open('POST', 'server.php');
+		request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+		let formData = new FormData(form);
+
+		let obj = {};
+		formData.forEach(function(value, key) {
+				obj[key] = value;
+		});
+		
+		let json = JSON.stringify(obj);
+
+		request.send(json);
+
+		request.addEventListener('readystatechange', function() {
+			if (request.readyState < 4) {
+				modal.classList.add('modal-show');
+				statusMessage.innerHTML = message.loading;
+			} else if(request.readyState === 4 && request.status == 200) {
+				modal.classList.add('modal-show');	
+				statusMessage.innerHTML = message.success;
+			} else {
+					statusMessage.classList.add('modal-show');
+					statusMessage.innerHTML = message.failure;
+				}
+			});
+
+		for (let i = 0; i < input.length; i++) {
+			input[i].value = '';
+		}
+	});
+
+	// Slider
+	let slideIndex = 1;
+	let slideIndexTitle = 1;
+	let slideIndexDescr = 1;
+	let slidesImage = document.querySelectorAll('.slider-item');
+	let slidesTitle = document.querySelectorAll('.section-title__burgers');
+	let slidesDescr = document.querySelectorAll('.burger-descr');
+	let arrowPrev = document.querySelector('.arrow-prev');
+	let arrowNext = document.querySelector('.arrow-next');
+	let price = document.querySelectorAll('.burger-price');
+
+	showSlidesImage(slideIndex);
+	// showSlidesTitle(slideIndexTitle);
+	// showSlidesDescr(slideIndexDescr);
+	
+	function showSlidesImage(n) {
+		if (n > slidesImage.length) {
+			slideIndex = 1;
+		} if (n < 1) {
+			slideIndex = slidesImage.length;
+		}
+
+		slidesImage.forEach((item) => { // Перебор всех слайдов
+			item.style.display = 'none'; // Скрыть все слайды
+		});
+
+		slidesTitle.forEach((item) => {
+			item.style.display = 'none';
+		});
+
+		price.forEach((item) => {
+			item.style.display = 'none'
+		})
+
+		slidesDescr.forEach((item) => {
+			item.style.display = 'none';
+		});
+
+		slidesImage[slideIndex - 1].style.display = 'block'; // Показать первый слайд
+		slidesTitle[slideIndex - 1].style.display = 'block';
+		slidesDescr[slideIndex - 1].style.display = 'block'; 
+		price[slideIndex - 1].style.display = 'block';
+	}
+
+	function nextSlides(n) { // Смена слайдов
+		showSlidesImage(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlidesImage(slideIndex = n);
+	}
+
+	arrowPrev.addEventListener('click', function() {
+		nextSlides(-1);
+	});
+
+	arrowNext.addEventListener('click', function() {
+		nextSlides(1);
+	})
 });
