@@ -32,30 +32,3 @@ let navigation = function() {
 }
 
 navigation();
-
-
-// Open Mobile Navigation
-function openNavigation() {
-	let mobileNav = document.querySelector('.mobile-menu');
-	
-	mobileNav.style.height = '100%';
-}
-
-function closeNavigation() {
-	let mobileNav = document.querySelector('.mobile-menu');
-	
-	mobileNav.style.height = '0';
-}
-
-let humburger = document.querySelector('.hamburger');
-let btnClose = document.querySelector('.navigation-mobile__close');
-
-humburger.addEventListener('click', (event) => {
-	event.preventDefault();
-	openNavigation();
-});
-
-btnClose.addEventListener('click', (event) => {
-	event.preventDefault();
-	closeNavigation();
-});

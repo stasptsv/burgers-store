@@ -31,7 +31,7 @@
 <body>
 
 	<div class="wrapper">
-		<section id="page1" class="section-main section">
+		<section id="main" class="section-main section">
 			<header class="header header-overlay">
 				<div class="container header-container">
 					<div class="header-logo">
@@ -43,7 +43,7 @@
 						<nav class="navigation">
 							<ul class="navigation-list mobile-list">
 								<li class="navigation-item">
-									<a href="#page2" class="navigation-link" data-index="2">О нас</a>
+									<a href="#best" class="navigation-link" data-index="2">О нас</a>
 								</li>
 								<li class="navigation-item">
 									<a href="#burgers" class="navigation-link" data-index="3">Бургеры</a>
@@ -68,7 +68,7 @@
 					</div>
 					<div class="header-links">
 						<a href="#order" class="button order-link" data-index="8">Заказать</a>
-						<a href="#" class="hamburger">
+						<a class="hamburger">
 							<div class="hamburger-bars"></div>
 						</a>
 					</div>
@@ -77,7 +77,7 @@
 				<div class="container main-container">
 					<div class="main-content">
 						<div class="main-content__left">
-							<img class="main-img" src="./image/main/main-burger.png" alt="Изображение бургера">
+							<img class="main-img" src="./image/main-burger.png" alt="Изображение бургера">
 						</div>
 						<div class="main-content__right">
 							<h1 class="section-title">
@@ -87,7 +87,7 @@
 						</div>
 					</div>
 				</div>
-			<a class="down-arrow" href="#page2" data-index="2">
+			<a class="down-arrow" href="#best" data-index="2">
 				<svg class="down-arrow__icon" data-index="2">
 					<use xlink:href="image/svg/sprite.svg#arrow-scroll"></use>
 				</svg>
@@ -95,7 +95,7 @@
 		</section>
 
 		<!-- Section Abuout-Us -->
-		<section id="page2" class="section-best section">
+		<section id="best" class="section-best section">
 			<div class="container">
 				<h2 class="section-title section-title__black">Мы лучшие</h2>
 				<ul class="best-list">
@@ -143,7 +143,7 @@
 		</section>
 
 		<!-- Section Burgers -->
-		<section id="page3" class="section-burgers section">
+		<section id="burgers" class="section-burgers section">
 			<div class="container">
 				<div class="burgers-slider">
 					<div class="burgers-slider__left">
@@ -288,7 +288,7 @@
 						<a class="team-trigger">Дэниэл Редклифф</a>
 						<div class="team-list__item-content">
 							<div class="team-list__item-pic">
-								<div class="team-list__item-image" style="background-image: url('image/team/person.jpg')"></div>
+								<div class="team-list__item-image" style="background-image: url('image/person.jpg')"></div>
 							</div>
 							<div class="team-list__item-descr">
 								<div class="team-list__item-title">Шеф-повар</div>
@@ -300,7 +300,7 @@
 						<a class="team-trigger">Ричард Джеймс</a>
 						<div class="team-list__item-content">
 							<div class="team-list__item-pic">
-								<div class="team-list__item-image" style="background-image: url('image/team/person.jpg')"></div>
+								<div class="team-list__item-image" style="background-image: url('image/person.jpg')"></div>
 							</div>
 							<div class="team-list__item-descr">
 								<div class="team-list__item-title">Оператор</div>
@@ -312,7 +312,7 @@
 						<a class="team-trigger">Джейк Финн</a>
 						<div class="team-list__item-content">
 							<div class="team-list__item-pic">
-								<div class="team-list__item-image" style="background-image: url('image/team/person.jpg')"></div>
+								<div class="team-list__item-image" style="background-image: url('image/person.jpg')"></div>
 							</div>
 							<div class="team-list__item-descr">
 								<div class="team-list__item-title">Менеджер</div>
@@ -324,7 +324,7 @@
 						<a class="team-trigger">Николай Иванов</a>
 						<div class="team-list__item-content">
 							<div class="team-list__item-pic">
-								<div class="team-list__item-image" style="background-image: url('image/team/person.jpg')"></div>
+								<div class="team-list__item-image" style="background-image: url('image/person.jpg')"></div>
 							</div>
 							<div class="team-list__item-descr">
 								<div class="team-list__item-title">Шоколатье</div>
@@ -341,7 +341,7 @@
 			<h2 class="section-title section-title__white menu-title">Меню</h2>
 			<ul class="menu-list">
 				<li class="menu-item">
-					<a class="menu-trigger" style="background-image: url('./image/menu/meats-bg.jpg')">
+					<a class="menu-trigger" style="background-image: url('./image/background/meats-bg.jpg')">
 						<h3 class="menu-trigger__title">Для мясоедов</h3>
 					</a>
 					<div class="menu-item__content">
@@ -359,7 +359,7 @@
 					</div>
 				</li>
 				<li class="menu-item">
-					<a class="menu-trigger" style="background-image: url('./image/menu/vegans-bg.jpg')">
+					<a class="menu-trigger" style="background-image: url('./image/background/vegans-bg.jpg')">
 						<h3 class="menu-trigger__title">Вегетарианское</h3>
 					</a>
 					<div class="menu-item__content">
@@ -377,7 +377,7 @@
 					</div>
 				</li>
 				<li class="menu-item">
-					<a class="menu-trigger" style="background-image: url('./image/menu/diets-bg.jpg')">
+					<a class="menu-trigger" style="background-image: url('./image/background/diets-bg.jpg')">
 						<h3 class="menu-trigger__title">Диетическое</h3>
 					</a>
 					<div class="menu-item__content">
@@ -544,21 +544,13 @@
 		<section id="video" class="section-video section">
 			<div class="container">
 				<h2 class="section-title section-title__black">Как мы работаем</h2>
-				<div class="player hidden">
-					<div class="player-wrapper">
-						<div id="yt-player"></div>
-						<div class="player-splash"></div>
-					</div>
-					<div class="player-controls">
-						<button class="player-start"></button>
-						<div class="player-playback">
-							<button class="player-playback__button"></button>
-						</div>
-						<div class="player-duration">
-							<span class="player-duration__completed">0:00</span> :
-							<span class="player-duration__estimate">0:00</span>
-						</div>
-					</div>
+				<div class="video">
+					<a class="video-link" href="https://youtu.be/zmg_jOwa9Fc">
+						<img class="video-media" src="https://i.ytimg.com/vi/zmg_jOwa9Fc/mqdefault.jpg" alt="Видео">
+					</a>
+					<button class="video-button" type="button" aria-label="Запустить видео">
+						<svg width="68" height="48" viewBox="0 0 68 48"><path class="video-button__shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path class="video-button__icon" d="M 45,24 27,14 27,34"></path></svg>
+					</button>
 				</div>
 			</div>
 		</section>
@@ -707,22 +699,22 @@
 		<nav class="navigation navigation-mobile">
 			<ul class="navigation-mobile__list">
 				<li class="navigation-mobile__item">
-					<a href="" class="navigation-mobile__link">о нас</a>
+					<a href="#best" class="navigation-mobile__link">о нас</a>
 				</li>
 				<li class="navigation-mobile__item">
-					<a href="" class="navigation-mobile__link">бургеры</a>
+					<a href="#burgers" class="navigation-mobile__link">бургеры</a>
 				</li>
 				<li class="navigation-mobile__item">
-					<a href="" class="navigation-mobile__link">команда</a>
+					<a href="#team" class="navigation-mobile__link">команда</a>
 				</li>
 				<li class="navigation-mobile__item">
-					<a href="" class="navigation-mobile__link">меню</a>
+					<a href="#menu" class="navigation-mobile__link">меню</a>
 				</li>
 				<li class="navigation-mobile__item">
-					<a href="" class="navigation-mobile__link">отзывы</a>
+					<a href="#feedback" class="navigation-mobile__link">отзывы</a>
 				</li>
 				<li class="navigation-mobile__item">
-					<a href="" class="navigation-mobile__link">контакты</a>
+					<a href="#contacts" class="navigation-mobile__link">контакты</a>
 				</li>
 			</ul>
 		</nav>
@@ -740,8 +732,6 @@
 	</script>	
 	<script src="https://www.youtube.com/iframe_api"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script src="js/player.js"></script>
-	<script src="js/map.js"></script>
 	<script src="js/main.min.js"></script>
 </body>
 </html>

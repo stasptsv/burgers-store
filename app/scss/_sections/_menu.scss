@@ -1,5 +1,5 @@
 .section-menu {
-	background: url('../../image/menu/menu-bg.jpg') center center no-repeat;
+	background: url('../../image/background/menu-bg.jpg') center center no-repeat;
   background-size: cover;
 	position: relative;
 }
@@ -51,12 +51,12 @@
 	position: absolute;
 	font-family: 'Gagalin Regular', Helvetica, sans-serif;
 	font-size: rem(40px);
-	color: #fff;
+	color: #ffffff;
 	text-align: center;
 	white-space: nowrap;
   left: 50%;
 	top: 100%;
-	margin-top: rem(-20px);
+	margin-top: rem(-40px);
   transform: rotate(-90deg) translateY(-50%);
 	transform-origin: 0 0;
 	

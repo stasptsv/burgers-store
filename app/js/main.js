@@ -161,10 +161,34 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 
+	// Open Mobile Navigation
+	function openNavigation() {
+		let mobileNav = document.querySelector('.mobile-menu');
+		
+		mobileNav.style.height = '100%';
+	}
+
+	function closeNavigation() {
+		let mobileNav = document.querySelector('.mobile-menu');
+		
+		mobileNav.style.height = '0';
+	}
+
+	let humburger = document.querySelector('.hamburger');
+	let btnClose = document.querySelector('.navigation-mobile__close');
+
+	humburger.addEventListener('click', (event) => {
+		event.preventDefault();
+		openNavigation();
+	});
+
+	btnClose.addEventListener('click', (event) => {
+		event.preventDefault();
+		closeNavigation();
+	});
+
 	// Slider
 	let slideIndex = 1;
-	let slideIndexTitle = 1;
-	let slideIndexDescr = 1;
 	let slidesImage = document.querySelectorAll('.slider-item');
 	let slidesTitle = document.querySelectorAll('.section-title__burgers');
 	let slidesDescr = document.querySelectorAll('.burger-descr');
@@ -173,8 +197,6 @@ window.addEventListener('DOMContentLoaded', function() {
 	let price = document.querySelectorAll('.burger-price');
 
 	showSlidesImage(slideIndex);
-	// showSlidesTitle(slideIndexTitle);
-	// showSlidesDescr(slideIndexDescr);
 	
 	function showSlidesImage(n) {
 		if (n > slidesImage.length) {
@@ -219,5 +241,147 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	arrowNext.addEventListener('click', function() {
 		nextSlides(1);
-	})
+	});
+
+	// Video
+	function findVideos() {
+		let videos = document.querySelectorAll('.video');
+	
+		for (let i = 0; i < videos.length; i++) {
+			setupVideo(videos[i]);
+		}
+	}
+	
+	function setupVideo(video) {
+		let link = video.querySelector('.video-link');
+		let media = video.querySelector('.video-media');
+		let button = video.querySelector('.video-button');
+		let id = parseMediaURL(media);
+	
+		video.addEventListener('click', () => {
+			let iframe = createIframe(id);
+	
+			link.remove();
+			button.remove();
+			video.appendChild(iframe);
+		});
+	
+		link.removeAttribute('href');
+		video.classList.add('video__enabled');
+	}
+	
+	function parseMediaURL(media) {
+		let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/mqdefault\.jpg/i;
+		let url = media.src;
+		let match = url.match(regexp);
+	
+		return match[1];
+	}
+	
+	function createIframe(id) {
+		let iframe = document.createElement('iframe');
+	
+		iframe.setAttribute('allowfullscreen', '');
+		iframe.setAttribute('allow', 'autoplay');
+		iframe.setAttribute('src', generateURL(id));
+		iframe.classList.add('video-media');
+	
+		return iframe;
+	}
+	
+	function generateURL(id) {
+		let query = '?rel=0&showinfo=0&autoplay=1';
+	
+		return 'https://www.youtube.com/embed/' + id + query;
+	}
+	
+	findVideos();
+	
+
+	// Yandex Map 
+	ymaps.ready();
+
+	let myPlacemarks = [
+		{
+			latitude: 59.97,
+			longitude: 30.31,
+			hintContent: 'ул. Литераторов, д. 19А',
+			balloonContent: [
+				'<div class="map-balloon">',
+					'<svg class="map-balloon__img">',
+						'<use xlink:href="image/svg/sprite.svg#logo"></use>',	
+					'</svg>',
+					'ул. Литераторов, д. 19А',
+				'</div>'
+			]
+		},
+		{
+			latitude: 59.945,  
+			longitude: 30.38,
+			hintContent: 'Калужский переулок, 9',
+			balloonContent: [
+				'<div class="map-balloon">',
+					'<svg class="map-balloon__img" >',
+						'<use xlink:href="image/svg/sprite.svg#logo"></use>',	
+					'</svg>',
+					'Калужский переулок, 9',
+				'</div>'
+			]
+		},
+		{
+			latitude: 59.89,
+			longitude: 30.32,
+			hintContent: 'Московский проспект, 109',
+			balloonContent: [
+				'<div class="map-balloon">',
+					'<svg class="map-balloon__img">',
+						'<use xlink:href="image/svg/sprite.svg#logo"></use>',	
+					'</svg>',
+					'Московский проспект, 109',
+				'</div>'
+			]
+		},
+		{
+			latitude: 59.918,
+			longitude: 30.493,
+			hintContent: 'улица Подвойского, 42',
+			balloonContent: [
+				'<div class="map-balloon">',
+					'<svg class="map-balloon__img">',
+						'<use xlink:href="image/svg/sprite.svg#logo1"></use>',	
+					'</svg>',
+					'улица Подвойского, 42',
+				'</div>'
+			]
+		}
+	];
+
+	ymaps.ready(function () {     
+		let myMap = new ymaps.Map('map', {
+				center: [59.94, 30.32],
+				zoom: 11,
+				controls: ['zoomControl'],
+				behaviors: ['drag']
+		}, {
+				searchControlProvider: 'yandex#search'
+		});
+
+		let customIcon = ymaps.templateLayoutFactory.createClass('<svg width="46" height="57"><use xlink:href="image/svg/sprite.svg#map-marker"></use></svg>');
+
+		myPlacemarks.forEach(function(obj) {
+			let myPlacemark = new ymaps.Placemark([obj.latitude, obj.longitude], { 
+				hintContent: obj.hintContent, 
+				balloonContent: obj.balloonContent.join('') 
+			},
+			{
+				iconLayout: 'default#image',
+				iconImageHref: 'image/svg/map-marker.svg',
+				iconImageSize: [46, 57],
+				iconImageOffset: [-23, -57]
+			});
+
+				myMap.geoObjects.add(myPlacemark);
+		});
+	});
+	
 });
