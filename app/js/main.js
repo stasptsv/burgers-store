@@ -377,7 +377,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			balloonContent: [
 				'<div class="map-balloon">',
 					'<svg class="map-balloon__img">',
-						'<use xlink:href="image/svg/sprite.svg#logo1"></use>',	
+						'<use xlink:href="image/svg/sprite.svg#logo"></use>',	
 					'</svg>',
 					'улица Подвойского, 42',
 				'</div>'
