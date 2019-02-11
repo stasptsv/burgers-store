@@ -1,20 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-	// Vertical Accordeon
-	let triggers = document.querySelectorAll('.team-trigger');
-	let accContent = document.querySelectorAll('.team-list__item-content');
-
-	triggers.forEach(function(item) {
-		item.addEventListener('click', () => {
-			accContent.forEach(function(item) {
-				item.classList.remove('show')
-				item.previousElementSibling.classList.remove('active-item_team')
-			});
-			item.nextElementSibling.classList.toggle('show');
-			item.classList.toggle('active-item__team');
-		}); 
-	});
-
 	// Feedback Popup
 	let popupFeedback = document.querySelector('.feedback-popup');
 	let viewBtn = document.querySelectorAll('.feedback-view');
@@ -35,6 +20,50 @@ window.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 
+	// Vertical Accordeon
+	let accordeon = (function() {
+		let accContent = document.querySelector('.team-list');
+		let isClicked = false;
+		let isAnimOver = true;
+	
+		let _toggleAccordeon = function(elem) {
+			if (isClicked) {
+				let activeItem = accContent.querySelector('.active-item__team');
+				activeItem.classList.remove('active-item__team');
+				activeItem.querySelector('.team-list__item-content').classList.remove('show');
+			}
+			elem.classList.toggle('active-item__team');
+			let elemContent = elem.querySelector('.team-list__item-content');
+			elemContent.classList.add('show')
+			isClicked = true;
+		}
+	
+		let addListener = function() {
+			accContent.addEventListener('click', function(event) {
+				let itemClicked = event.target.parentElement;
+				let isTrigger = (event.target.className === 'team-trigger');
+				if (isTrigger && isAnimOver
+					&& itemClicked.classList.contains('active-item__team')) {
+						itemClicked.classList.remove('active-item__team');
+						itemClicked.querySelector('.team-list__item-content').classList.remove('show');
+						isClicked = false;
+						isAnimOver = false;
+						setTimeout(function() {isAnimOver = true;}, 600);
+				} else if (isTrigger && isAnimOver) {
+					_toggleAccordeon(itemClicked);
+					isAnimOver = false;
+					setTimeout(function() {isAnimOver = true;}, 600);
+				}
+			})
+		}
+	
+		return {
+			init: addListener
+		};
+	})();
+	accordeon.init();
+
+	
 	// Horizontal Accordeon
 	let accordeonHorizontal = (function() {
 		let accordeon = document.querySelector('.menu-list');

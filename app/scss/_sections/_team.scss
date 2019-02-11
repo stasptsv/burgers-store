@@ -54,6 +54,7 @@
 	color: #fff;
 	margin-bottom: rem(20px);
 	text-decoration: none;
+	cursor: pointer;
 
 	&:before, &:after {
 		content: "";
@@ -147,6 +148,11 @@
 	width: rem(100px);
 	height: rem(100px);
 	border-radius: 50%;
+	flex-shrink: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
 }
 
 .team-list__item-title {
@@ -176,9 +182,11 @@
 }
 
 .active-item__team {
-	color: #f9b43b;
-
-	&:before {
-		transform: rotate(-180deg);
+	.team-trigger {
+		color: #f9b43b;
+		
+		&:before {
+			transform: rotate(-180deg);
+		}
 	}
 }
